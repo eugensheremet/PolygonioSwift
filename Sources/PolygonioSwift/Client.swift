@@ -1019,5 +1019,60 @@ public class Client {
     }
     
     //MARK: - Crypto Endpoints
-    
+
+	/// See the current snapshot of a single ticker
+	/// - Parameters:
+	///   - symbol: Ticker of the snapshot
+	///   - completion: The completion to receive the response which is an CryptoSnapshotResponse object.
+	public func cryptoSnapshot(symbol:String, completion: @escaping (_ response: CryptoSnapshotResponse?, _ error: PolygonSwiftError?) -> Void) {
+		let rq = CryptoSnapshotRequest(symbol: symbol)
+		let url = builder.buildURL(rq)
+
+		// debug url
+		if self.debug {
+			print(url.absoluteURL)
+		}
+
+		let task = session.dataTask(with: url, completionHandler: { data, response, error in
+
+			// Unwrap the data and make sure that an error wasn't returned
+			guard let data = data, error == nil else {
+				// If an error was returned set the value in the completion as nil and print the error
+				DispatchQueue.main.async {
+					completion(nil, PolygonSwiftError(error?.localizedDescription ?? "Data is empty at tickerSnapshot()."))
+				}
+				return
+			}
+
+			// add a try/catch so we can fetch any possible errors when decoding response or from the api call
+			do {
+				// you can debug the raw json reply by using the line below
+				//let response = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+				let rs = try JSONDecoder().decode(CryptoSnapshotResponse.self, from: data)
+				DispatchQueue.main.async {
+					completion(rs, nil)
+				}
+			} catch {
+				if self.debug {
+					// get better error description
+					print(String(describing: error))
+				}
+				// lets handle the type of error here
+				// try to see if we got an error from the api in the response
+				guard let responseError = try? JSONDecoder().decode(PolygonErrorResponse.self, from: data) else {
+					// just send normal error
+					DispatchQueue.main.async {
+						completion(nil, PolygonSwiftError(error.localizedDescription))
+					}
+					return
+				}
+
+				// if we have an error from the api send that error instead as it may give more info.
+				DispatchQueue.main.async {
+					completion(nil, PolygonSwiftError(responseError.error))
+				}
+			}
+		})
+		task.resume()
+	}
 }
