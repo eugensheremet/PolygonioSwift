@@ -44,11 +44,11 @@ public struct PreviousCloseResponse : Decodable {
     public struct Candle : Codable {
         public var ticker: String
         public var volume: Int
-        public var volumeWeighted: Decimal
-        public var open: Decimal
-        public var close: Decimal
-        public var high: Decimal
-        public var low: Decimal
+        public var volumeWeighted: Double
+        public var open: Double
+        public var close: Double
+        public var high: Double
+        public var low: Double
         public var timestamp: Int
         
         private enum CodingKeys: String, CodingKey {

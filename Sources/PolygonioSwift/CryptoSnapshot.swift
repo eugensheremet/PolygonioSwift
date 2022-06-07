@@ -39,8 +39,8 @@ public struct CryptoSnapshotResponse : Decodable {
 		public var min: minuteOCHL
 		public var prevDay: dayOCHL
 		public var ticker: String
-		public var todaysChange: Decimal
-		public var todaysChangePerc: Decimal
+		public var todaysChange: Double
+		public var todaysChangePerc: Double
 		public var updated: Int
 
 		private enum CodingKeys: String, CodingKey {
@@ -55,12 +55,12 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct dayOCHL : Codable {
-		public var volume: Decimal
-		public var VWAP: Decimal //VWAP (Volume Weighted Average Price)
-		public var open: Decimal
-		public var close: Decimal
-		public var high: Decimal
-		public var low: Decimal
+		public var volume: Double
+		public var VWAP: Double //VWAP (Volume Weighted Average Price)
+		public var open: Double
+		public var close: Double
+		public var high: Double
+		public var low: Double
 
 		private enum CodingKeys: String, CodingKey {
 			case volume = "v"
@@ -73,9 +73,9 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct lastQuote : Codable {
-		public var askPrice: Decimal
+		public var askPrice: Double
 		public var askSize: Int
-		public var bidPrice: Decimal
+		public var bidPrice: Double
 		public var bidSize: Int
 		public var timestamp: Int
 
@@ -89,12 +89,12 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct minuteOCHL : Codable {
-		public var volume: Decimal
-		public var VWAP: Decimal //VWAP (Volume Weighted Average Price)
-		public var open: Decimal
-		public var close: Decimal
-		public var high: Decimal
-		public var low: Decimal
+		public var volume: Double
+		public var VWAP: Double //VWAP (Volume Weighted Average Price)
+		public var open: Double
+		public var close: Double
+		public var high: Double
+		public var low: Double
 
 		private enum CodingKeys: String, CodingKey {
 			case volume = "v"

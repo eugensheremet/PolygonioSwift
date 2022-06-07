@@ -27,13 +27,13 @@ public struct DailyOpenCloseResponse : Decodable {
     public var status: String
     public var from: String
     public var symbol: String
-    public var open: Decimal
-    public var high: Decimal
-    public var low: Decimal
-    public var close: Decimal
+    public var open: Double
+    public var high: Double
+    public var low: Double
+    public var close: Double
     public var volume: Int
-    public var afterHours: Decimal
-    public var preMarket: Decimal
+    public var afterHours: Double
+    public var preMarket: Double
     
     private enum CodingKeys: String, CodingKey {
         case status = "status"

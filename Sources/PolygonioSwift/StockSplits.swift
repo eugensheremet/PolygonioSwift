@@ -38,7 +38,7 @@ public struct StockSplitsResponse : Decodable {
         public var exDate: String
         public var paymentDate: String
         public var declaredDate: String?
-        public var ratio: Decimal
+        public var ratio: Double
         public var tofactor: Int?
         public var forfactor: Int?
         

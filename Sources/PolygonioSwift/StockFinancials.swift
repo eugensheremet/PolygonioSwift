@@ -55,14 +55,14 @@ public struct StockFinancialsResponse : Decodable {
         public var assets : Int
         public var assetsCurrent : Int
         public var assetsNonCurrent : Int
-        public var bookValuePerShare : Decimal
+        public var bookValuePerShare : Double
         public var capitalExpenditure : Int
         public var cashAndEquivalents : Int
         public var cashAndEquivalentsUSD : Int
         public var costOfRevenue : Int
         public var consolidatedIncome : Int
-        public var currentRatio : Decimal
-        public var debtToEquityRatio : Decimal
+        public var currentRatio : Double
+        public var debtToEquityRatio : Double
         public var debt : Int
         public var debtCurrent : Int
         public var debtNonCurrent : Int
@@ -70,27 +70,27 @@ public struct StockFinancialsResponse : Decodable {
         public var deferredRevenue : Int
         public var depreciationAmortizationAndAccretion : Int
         public var deposits : Int
-        public var dividendYield : Decimal
-        public var dividendsPerBasicCommonShare : Decimal
+        public var dividendYield : Double
+        public var dividendsPerBasicCommonShare : Double
         public var earningBeforeInterestTaxes : Int
         public var earningsBeforeInterestTaxesDepreciationAmortization : Int
-        public var EBITDAMargin : Decimal
+        public var EBITDAMargin : Double
         public var earningsBeforeInterestTaxesDepreciationAmortizationUSD : Int
         public var earningBeforeInterestTaxesUSD : Int
         public var earningsBeforeTax : Int
-        public var earningsPerBasicShare : Decimal
-        public var earningsPerDilutedShare : Decimal
-        public var earningsPerBasicShareUSD : Decimal
+        public var earningsPerBasicShare : Double
+        public var earningsPerDilutedShare : Double
+        public var earningsPerBasicShareUSD : Double
         public var shareholdersEquity : Int
         public var shareholdersEquityUSD : Int
         public var enterpriseValue : Int
         public var enterpriseValueOverEBIT : Int
-        public var enterpriseValueOverEBITDA : Decimal
+        public var enterpriseValueOverEBITDA : Double
         public var freeCashFlow : Int
-        public var freeCashFlowPerShare : Decimal
+        public var freeCashFlowPerShare : Double
         public var foreignCurrencyUSDExchangeRate : Int
         public var grossProfit : Int
-        public var grossMargin : Decimal
+        public var grossMargin : Double
         public var goodwillAndIntangibleAssets : Int
         public var interestExpense : Int
         public var investedCapital : Int
@@ -117,19 +117,19 @@ public struct StockFinancialsResponse : Decodable {
         public var netIncomeCommonStockUSD : Int
         public var netLossIncomeFromDiscontinuedOperations : Int
         public var netIncomeToNonControllingInterests : Int
-        public var profitMargin : Decimal
+        public var profitMargin : Double
         public var operatingExpenses : Int
         public var operatingIncome : Int
         public var tradeAndNonTradePayables : Int
-        public var payoutRatio : Decimal
-        public var priceToBookValue : Decimal
-        public var priceEarnings : Decimal
-        public var priceToEarningsRatio : Decimal
+        public var payoutRatio : Double
+        public var priceToBookValue : Double
+        public var priceEarnings : Double
+        public var priceToEarningsRatio : Double
         public var propertyPlantEquipmentNet : Int
         public var preferredDividendsIncomeStatementImpact : Int
-        public var sharePriceAdjustedClose : Decimal
-        public var priceSales : Decimal
-        public var priceToSalesRatio : Decimal
+        public var sharePriceAdjustedClose : Double
+        public var priceSales : Double
+        public var priceToSalesRatio : Double
         public var tradeAndNonTradeReceivables : Int
         public var accumulatedRetainedEarningsDeficit : Int
         public var revenues : Int
@@ -141,12 +141,12 @@ public struct StockFinancialsResponse : Decodable {
         public var shares : Int
         public var weightedAverageShares : Int
         public var weightedAverageSharesDiluted : Int
-        public var salesPerShare : Decimal
+        public var salesPerShare : Double
         public var tangibleAssetValue : Int
         public var taxAssets : Int
         public var incomeTaxExpense : Int
         public var taxLiabilities : Int
-        public var tangibleAssetsBookValuePerShare : Decimal
+        public var tangibleAssetsBookValuePerShare : Double
         public var workingCapital : Int
         
         private enum CodingKeys: String, CodingKey {

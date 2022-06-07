@@ -38,7 +38,7 @@ public struct StockDividendsResponse : Decodable {
         public var exDate: String
         public var paymentDate: String
         public var recordDate: String
-        public var amount: Decimal
+        public var amount: Double
         
         private enum CodingKeys: String, CodingKey {
             case ticker = "ticker"
