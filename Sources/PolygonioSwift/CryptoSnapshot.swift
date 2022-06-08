@@ -23,9 +23,9 @@ public struct CryptoSnapshotRequest : ApiRequest {
 
 public struct CryptoSnapshotResponse : Decodable {
 
-	public var status: String
-	public var requestId: String
-	public var ticker: Ticker
+	public var status: String?
+	public var requestId: String?
+	public var ticker: Ticker?
 
 	private enum CodingKeys: String, CodingKey {
 		case status = "status"
@@ -35,13 +35,13 @@ public struct CryptoSnapshotResponse : Decodable {
 
 	// The ticker snapshot info
 	public struct Ticker : Codable {
-		public var day: dayOCHL
-		public var min: minuteOCHL
-		public var prevDay: dayOCHL
-		public var ticker: String
-		public var todaysChange: Double
-		public var todaysChangePerc: Double
-		public var updated: Int
+		public var day: dayOCHL?
+		public var min: minuteOCHL?
+		public var prevDay: dayOCHL?
+		public var ticker: String?
+		public var todaysChange: Double?
+		public var todaysChangePerc: Double?
+		public var updated: Int?
 
 		private enum CodingKeys: String, CodingKey {
 			case day = "day"
@@ -55,12 +55,12 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct dayOCHL : Codable {
-		public var volume: Double
-		public var VWAP: Double //VWAP (Volume Weighted Average Price)
-		public var open: Double
-		public var close: Double
-		public var high: Double
-		public var low: Double
+		public var volume: Double?
+		public var VWAP: Double? //VWAP (Volume Weighted Average Price)
+		public var open: Double?
+		public var close: Double?
+		public var high: Double?
+		public var low: Double?
 
 		private enum CodingKeys: String, CodingKey {
 			case volume = "v"
@@ -73,11 +73,11 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct lastQuote : Codable {
-		public var askPrice: Double
-		public var askSize: Int
-		public var bidPrice: Double
-		public var bidSize: Int
-		public var timestamp: Int
+		public var askPrice: Double?
+		public var askSize: Int?
+		public var bidPrice: Double?
+		public var bidSize: Int?
+		public var timestamp: Int?
 
 		private enum CodingKeys: String, CodingKey {
 			case askPrice = "P"
@@ -89,12 +89,12 @@ public struct CryptoSnapshotResponse : Decodable {
 	}
 
 	public struct minuteOCHL : Codable {
-		public var volume: Double
-		public var VWAP: Double //VWAP (Volume Weighted Average Price)
-		public var open: Double
-		public var close: Double
-		public var high: Double
-		public var low: Double
+		public var volume: Double?
+		public var VWAP: Double? //VWAP (Volume Weighted Average Price)
+		public var open: Double?
+		public var close: Double?
+		public var high: Double?
+		public var low: Double?
 
 		private enum CodingKeys: String, CodingKey {
 			case volume = "v"

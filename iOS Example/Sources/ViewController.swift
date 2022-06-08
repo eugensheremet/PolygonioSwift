@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 		let polygon = PolygonioSwift.Client(key: "9_b12z8RtjZaVuGbsjKgUyPH3dGtJv9_")
 		polygon.setDebug(enable: true)
 
-		polygon.aggregates(ticker: "X:BTCUSD", multiplier: 1, timespan: .day, from: "2021-07-22", to: "2021-08-22") { (result:AggregatesResponse?, err) in
+		polygon.aggregates(ticker: "X:SHIBUSD", multiplier: 1, timespan: .day, from: "2021-07-22", to: "2022-05-22") { (result:AggregatesResponse?, err) in
 			// check if we got any errors
 			if let err = err {
 				print(err)
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 			}
 		}
 
-		polygon.cryptoSnapshot(symbol: "X:BTCUSD") { response, error in
+		polygon.cryptoSnapshot(symbol: "X:SHIBUSD") { response, error in
 			// check if we got any errors
 			if let err = error {
 				print(err)

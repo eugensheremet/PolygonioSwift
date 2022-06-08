@@ -37,14 +37,14 @@ public struct AggregatesRequest : ApiRequest {
 
 public struct AggregatesResponse : Decodable {
     
-    public var ticker: String
-    public var status: String
-    public var adjusted: Bool
-    public var queryCount: Int
-    public var resultsCount: Int
-    public var results: [Candle]
-    public var requestid: String
-    public var count: Int
+    public var ticker: String?
+    public var status: String?
+    public var adjusted: Bool?
+    public var queryCount: Int?
+    public var resultsCount: Int?
+    public var results: [Candle]?
+    public var requestid: String?
+    public var count: Int?
 
     private enum CodingKeys: String, CodingKey {
         case ticker = "ticker"
@@ -58,13 +58,13 @@ public struct AggregatesResponse : Decodable {
     }
     
     public struct Candle : Codable {
-        public var volume: Double
-        public var VWAP: Double //VWAP (Volume Weighted Average Price)
-        public var open: Double
-        public var close: Double
-        public var high: Double
-        public var low: Double
-        public var timestamp: Int
+        public var volume: Double?
+        public var VWAP: Double? //VWAP (Volume Weighted Average Price)
+        public var open: Double?
+        public var close: Double?
+        public var high: Double?
+        public var low: Double?
+        public var timestamp: Int?
         public var n: Int?
         
         private enum CodingKeys: String, CodingKey {
